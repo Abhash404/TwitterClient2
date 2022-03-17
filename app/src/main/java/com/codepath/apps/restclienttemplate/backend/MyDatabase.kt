@@ -1,0 +1,18 @@
+package com.codepath.apps.restclienttemplate.backend
+
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import com.codepath.apps.restclienttemplate.models.SampleModel
+import com.codepath.apps.restclienttemplate.models.SampleModelDao
+
+@Database(entities = [SampleModel::class], version = 1)
+
+abstract class MyDatabase : RoomDatabase() {
+
+    abstract fun sampleModelDao(): SampleModelDao?
+
+    companion object {
+
+        const val NAME = "MyDatabase"
+    }
+}
